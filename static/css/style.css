@@ -1,0 +1,17 @@
+body {
+    background: #c7dae7;
+}
+
+.navbar .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar .nav-item .nav-link {
+    color: #ffffff;
+}
+
+.btn-primary {
+    color: black;
+    background: #f5d83c;
+    border-color: black;
+}

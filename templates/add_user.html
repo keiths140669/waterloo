@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    <div class="alert alert-warning alert-dismissable fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+{% endfor %}
+
+{% if name %}
+
+{% else %}
+    <h1>User List</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        {{ form.first_name.label(class="form-label") }}
+        {{ form.first_name(class="form-control") }}
+        <br/>
+
+        {{ form.last_name.label(class="form-label") }}
+        {{ form.last_name(class="form-control") }}
+        <br/>
+
+        {{ form.email.label(class="form-label") }}
+        {{ form.email(class="form-control") }}
+        <br/>
+
+        {{ form.submit(class="btn btn-primary") }}
+        <br/>
+    </form>
+<br/>
+{% for our_user in our_users %}
+
+    <strong>First Name:</strong> {{ our_user.first_name }}  <strong>Last Name:</strong> {{ our_user.last_name }} <strong>Email:</strong> {{ our_user.email }} <br/>
+
+{% endfor %}
+
+{% endif %}
+
+{% endblock %}
